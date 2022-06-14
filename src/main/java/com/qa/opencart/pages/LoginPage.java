@@ -22,7 +22,7 @@ public class LoginPage {
 	private By registerlink = By.linkText("Register");
 	private By logoutMsg = By.cssSelector("div#content h1");
 	private By forgottenpwd = By.linkText("Forgotten Password");
-	private By forgottenpwd11 = By.linkText("Forgotten Password11");
+	
 
 	/*
 	 * Create public page class constructor and pass the driver. So if we call the
