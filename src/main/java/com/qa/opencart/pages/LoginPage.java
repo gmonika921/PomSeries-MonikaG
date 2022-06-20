@@ -21,7 +21,7 @@ public class LoginPage {
 	private By forgetpasswordlink = By.linkText("Forgotten Password");
 	private By registerlink = By.linkText("Register");
 	private By logoutMsg = By.cssSelector("div#content h1");
-	private By forgottenpwd = By.linkText("Forgotten Password");
+	
 	
 
 	/*
