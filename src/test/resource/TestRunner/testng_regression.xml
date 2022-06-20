@@ -12,27 +12,18 @@
 	</listeners>
 
 	<test name="Open Cart Login Page Test">
-		<parameter name="browser" value="chrome" />
-		<parameter name="url" value="https://www.google.com" />
-		<parameter name="headless" value="false" />
 		<classes>
 			<class name="com.qa.opencart.test.LoginPageTest" />
 		</classes>
 	</test>
 
 	<test name="Open Cart Accounts Page Test">
-		<parameter name="browser" value="chrome" />
-		<parameter name="url" value="https://www.orangehrm.com/hris-hr-software-demo/" />
-        <parameter name="headless" value="false" />
 		<classes>
 			<class name="com.qa.opencart.test.AccountsPageTest" />
 		</classes>
 	</test>
 
 	<test name="Open Cart ProductInfo Test">
-		<parameter name="browser" value="chrome" />
-		<parameter name="url" value="https://demo.opencart.com/index.php?route=account/register" />
-        <parameter name="headless" value="false" />
 		<classes>
 			<class name="com.qa.opencart.test.ProductInfoTest" />
 		</classes>
