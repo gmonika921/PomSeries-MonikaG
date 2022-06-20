@@ -33,14 +33,14 @@ public class DriverFactory {
 	 * This method will return the driver on the basis of browsername
 	 * @param Properties prop
 	 * return - will return webdriver
+	 * @throws FrameworkException 
 	 */
 
-	public static void main(String[] args) {
 
-	}
 	
-	public WebDriver init_driver(Properties prop) {
-		String browsername = prop.getProperty("browser").trim();
+	public WebDriver init_driver(Properties prop) throws FrameworkException {
+//		String browsername = prop.getProperty("browser").trim();
+		String browsername = System.getProperty("browser");
 		System.out.println("Browser name is : " +browsername);
 		optionsManager = new OptionsManager(prop);
 		if(browsername.equalsIgnoreCase("chrome")) {
@@ -63,6 +63,7 @@ public class DriverFactory {
 		
 		else {
 			System.out.println("Please enter the correct browsername");
+			throw new FrameworkException("no browser found...");
 	}
 		
 		getDriver().manage().deleteAllCookies();
@@ -73,6 +74,7 @@ public class DriverFactory {
 	
 	}
 	
+
 	/** It will return the local copy of webdriver as we put set method to set the driver.
 	 * This method will return the local copy of the driver and give to the 5 individual thread over there.
 	 * Synchronized mode so no thread is blocking other thread, it's good to use this.
@@ -98,14 +100,14 @@ public class DriverFactory {
 		System.out.println("Running test on environment " +envName);
 		
 		if (envName == null) {
-			System.out.println("Since no env is given so running on qa");
+			System.out.println("Since no env is given....hence running on qa");
 			try {
 				ip = new FileInputStream("./src/test/resource/config/qa.config.properties");
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		
 			
 			else {
 				try {
@@ -129,21 +131,21 @@ public class DriverFactory {
 					
 				}
 			}
+			
 				catch(FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (FrameworkException e) {
 					e.printStackTrace();
 				}
-				
+			}
+		
 	try {
 		prop.load(ip);
 	} catch (IOException e) {
-		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}	
 		
-	
-	}
+		
 		return prop;
 	}
 

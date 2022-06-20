@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
 
 import com.qa.opencart.Factory.DriverFactory;
+import com.qa.opencart.customexceptions.FrameworkException;
 import com.qa.opencart.pages.AccountsPage;
 import com.qa.opencart.pages.Commonspage;
 import com.qa.opencart.pages.ForgottenPage;
@@ -43,7 +44,11 @@ public class BaseTest {
 
 		df = new DriverFactory();
 		prop = df.init_prop();
-		driver = df.init_driver(prop);
+		try {
+			driver = df.init_driver(prop);
+		} catch (FrameworkException e) {
+			e.printStackTrace();
+		}
 		loginPage = new LoginPage(driver);
 		accPage = new AccountsPage(driver);
 		forgetPage = new ForgottenPage(driver);
