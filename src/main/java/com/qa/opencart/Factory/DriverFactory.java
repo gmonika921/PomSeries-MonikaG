@@ -33,7 +33,7 @@ public class DriverFactory {
 	 * This method will return the driver on the basis of browsername
 	 * @param Properties prop
 	 * return - will return webdriver
-	 * @throws FrameworkException 
+	 *  
 	 */
 
 

@@ -44,11 +44,7 @@ public class BaseTest {
 
 		df = new DriverFactory();
 		prop = df.init_prop();
-		try {
-			driver = df.init_driver(prop);
-		} catch (FrameworkException e) {
-			e.printStackTrace();
-		}
+		driver = df.init_driver(prop);
 		loginPage = new LoginPage(driver);
 		accPage = new AccountsPage(driver);
 		forgetPage = new ForgottenPage(driver);
