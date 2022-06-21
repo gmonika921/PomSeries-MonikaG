@@ -80,7 +80,7 @@ public class DriverFactory {
 	 * Synchronized mode so no thread is blocking other thread, it's good to use this.
 	 */
 	
-	public synchronized WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return tlDriver.get();
 	}
 	

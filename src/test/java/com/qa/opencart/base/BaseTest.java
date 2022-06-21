@@ -32,14 +32,14 @@ public class BaseTest {
 	
 	protected SoftAssert softAssert;
 
-	@BeforeTest
+	
 	/*
 	 * This setup method is responsible to initialise the driver. but we already
 	 * have Driver factory for that. So here we create object of that
 	 * If we use Before method here, the browser will be launched 5 times depending on the number 
 	 * of test cases in testng. If the application is not stable, we can use Before method
 	 */
-
+	@BeforeTest
 	public void Setup() {
 
 		df = new DriverFactory();
